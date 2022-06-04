@@ -1,5 +1,4 @@
 import classes from './topBar.module.scss';
-import React from 'react';
 import {
   FaFacebook,
   FaTwitter,
