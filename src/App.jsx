@@ -3,8 +3,9 @@ import TopBar from 'react-blog/components/topBar/TopBar';
 import Home from 'react-blog/pages/homePage/Home';
 import SinglePage from 'react-blog/pages/singlePage/SinglePage';
 import Write from 'react-blog/pages/writePage/Write';
+import Register from 'react-blog/pages/register/Register';
 // import Settings from 'react-blog/pages/settings/Settings';
-import Login from 'react-blog/pages/login/Login';
+// import Login from 'react-blog/pages/login/Login';
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       {/* <Home /> */}
       {/* <SinglePage /> */}
       {/* <Write /> */}
-      <Login />
+      {/* <Login /> */}
       {/* <Settings /> */}
+      <Register />
     </div>
   );
 }
