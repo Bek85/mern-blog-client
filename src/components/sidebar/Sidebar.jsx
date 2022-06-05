@@ -31,14 +31,7 @@ export default function Sidebar() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolores
           nostrum consequuntur officia, inventore sequi dolorum porro laboriosam
           culpa eveniet fugit, laudantium ut fuga veritatis rerum, distinctio
-          eligendi aut possimus quos dignissimos omnis qui. Eaque reprehenderit
-          voluptate, quasi placeat consectetur minima alias recusandae sunt
-          saepe, nemo nesciunt ipsam perspiciatis! Quidem repudiandae dicta
-          odio, ipsam repellat aperiam ea recusandae consequuntur, quasi, veniam
-          hic fugiat saepe vitae praesentium iste eum! Eveniet fugit soluta,
-          tenetur illum repudiandae distinctio quas voluptate doloremque quod
-          fuga iste eius voluptatum. Voluptatibus quo vel consectetur saepe ipsa
-          odit atque eius non, maxime vero iste maiores nemo sunt incidunt?
+          eligendi aut possimus quos dignissimos omnis qui.
         </p>
       </div>
       <div className={sidebarItem}>
