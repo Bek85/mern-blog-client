@@ -3,7 +3,8 @@ import TopBar from 'react-blog/components/topBar/TopBar';
 import Home from 'react-blog/pages/homePage/Home';
 import SinglePage from 'react-blog/pages/singlePage/SinglePage';
 import Write from 'react-blog/pages/writePage/Write';
-import Settings from 'react-blog/pages/settings/Settings';
+// import Settings from 'react-blog/pages/settings/Settings';
+import Login from 'react-blog/pages/login/Login';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       {/* <Home /> */}
       {/* <SinglePage /> */}
       {/* <Write /> */}
-      <Settings />
+      <Login />
+      {/* <Settings /> */}
     </div>
   );
 }
