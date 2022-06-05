@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import classes from './register.module.scss';
 
 export default function Register() {
@@ -12,7 +13,9 @@ export default function Register() {
         <label>Password</label>
         <input type="password" placeholder="Enter your password" />
         <button className={classes.registerBtn}>Register</button>
-        <button className={classes.loginBtn}>Login</button>
+        <Link to="/login" className={classes.loginBtn}>
+          Login
+        </Link>
       </form>
     </div>
   );
