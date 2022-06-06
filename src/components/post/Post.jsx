@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import classes from './post.module.scss';
 
 export default function Post({ post }) {
@@ -13,10 +14,14 @@ export default function Post({ post }) {
       /> */}
       <div className={classes.postInfo}>
         <div className={classes.postCategories}>
-          <span className={classes.postCategory}>Music</span>
-          <span className={classes.postCategory}>Life</span>
+          {post.categories.map((category) => (
+            <span className={classes.postCategory}>{category.name}</span>
+          ))}
         </div>
-        <span className={classes.postTitle}>{post.title}</span>
+        <Link to={`/post/${post._id}`}>
+          <span className={classes.postTitle}>{post.title}</span>
+        </Link>
+
         <hr />
         <span className={classes.postDate}>
           {new Date(post.createdAt).toDateString()}
