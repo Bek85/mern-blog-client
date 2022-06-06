@@ -1,16 +1,12 @@
 import Post from 'react-blog/components/post/Post';
 import classes from './posts.module.scss';
 
-const { posts } = classes;
-
-export default function Posts() {
+export default function Posts({ posts }) {
   return (
-    <div className={posts}>
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+    <div className={classes.posts}>
+      {posts.map((post) => {
+        return <Post key={post._id} post={post} />;
+      })}
     </div>
   );
 }
