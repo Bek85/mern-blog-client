@@ -40,6 +40,11 @@
     border-radius: 10px;
     padding: 10px;
     text-align: center;
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: gray;
+    }
   }
 
   .registerBtn {

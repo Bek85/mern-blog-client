@@ -23,7 +23,6 @@ export default function Login() {
     }
   };
 
-  console.log(user);
   return (
     <div className={classes.login}>
       <span className={classes.loginTitle}>Login</span>
@@ -40,7 +39,11 @@ export default function Login() {
           placeholder="Enter your password"
           ref={passwordRef}
         />
-        <button type="submit" className={classes.loginBtn}>
+        <button
+          type="submit"
+          className={classes.loginBtn}
+          disabled={isFetching}
+        >
           Login
         </button>
         <Link to="/register" className={classes.registerBtn}>
