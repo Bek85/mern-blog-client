@@ -11,7 +11,11 @@ import { Context } from 'react-blog/context/Context';
 import { useContext } from 'react';
 
 export default function TopBar() {
-  const { user } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
+
+  const handleLogout = () => {
+    dispatch({ type: 'LOGOUT' });
+  };
 
   return (
     <div className={classes.topBar}>
@@ -35,7 +39,9 @@ export default function TopBar() {
           <li className={classes.topListItem}>
             <Link to="/write">Write</Link>
           </li>
-          <li className={classes.topListItem}>{user && 'Log Out'}</li>
+          <li onClick={handleLogout} className={classes.topListItem}>
+            {user && 'Log Out'}
+          </li>
         </ul>
       </div>
       <div className={classes.topRight}>
