@@ -1,6 +1,6 @@
 import classes from './singlePost.module.scss';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -35,7 +35,9 @@ export default function SinglePost() {
         </h1>
         <div className={classes.singlePostInfo}>
           <span className={classes.singlePostAuthor}>
-            Author: <b>{post.username}</b>
+            <Link to={`/?user=${post.username}`}>
+              Author: <b>{post.username}</b>
+            </Link>
           </span>
           <span className={classes.singlePostDate}>
             {new Date(post.createdAt).toDateString()}
