@@ -11,6 +11,7 @@ export default function Register() {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
+    setError(false);
     try {
       const response = await axios.post('api/auth/register', {
         username,
@@ -50,6 +51,13 @@ export default function Register() {
         <Link to="/login" className={classes.loginBtn}>
           Login
         </Link>
+        {error && (
+          <span
+            style={{ textAlign: 'center', color: 'red', paddingTop: '10px' }}
+          >
+            Something went wrong...
+          </span>
+        )}
       </form>
     </div>
   );
