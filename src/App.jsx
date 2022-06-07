@@ -7,9 +7,12 @@ import Write from 'react-blog/pages/writePage/Write';
 import Register from 'react-blog/pages/register/Register';
 import Settings from 'react-blog/pages/settings/Settings';
 import Login from 'react-blog/pages/login/Login';
+import { useContext } from 'react';
+import { Context } from './context/Context';
 
 function App() {
-  const user = false;
+  const { user } = useContext(Context);
+
   return (
     <div className="App">
       <TopBar />
