@@ -2,10 +2,15 @@ import { Link } from 'react-router-dom';
 import classes from './post.module.scss';
 
 export default function Post({ post }) {
+  const PF = 'http://localhost:4000/images/';
   return (
     <div className={classes.post}>
       {post.photo && (
-        <img className={classes.postImage} src={post.photo} alt="post photo" />
+        <img
+          className={classes.postImage}
+          src={PF + post.photo}
+          alt="post photo"
+        />
       )}
       {/* <img
         className={classes.postImage}

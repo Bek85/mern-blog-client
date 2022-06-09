@@ -8,6 +8,7 @@ export default function SinglePost() {
   const [post, setPost] = useState({});
   const location = useLocation();
   const path = location.pathname.split('/')[2];
+  const PF = 'http://localhost:4000/images/';
 
   useEffect(() => {
     const fetchSinglePost = async () => {
@@ -21,11 +22,13 @@ export default function SinglePost() {
   return (
     <div className={classes.singlePost}>
       <div className={classes.singlePostWrapper}>
-        <img
-          className={classes.singlePostImage}
-          src="https://images.pexels.com/photos/736842/pexels-photo-736842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="singlePost image"
-        />
+        {post.photo && (
+          <img
+            src={PF + post.photo}
+            alt=""
+            className={classes.singlePostImage}
+          />
+        )}
         <h1 className={classes.singlePostTitle}>
           {post.title}
           <div className={classes.singlePostEdit}>
