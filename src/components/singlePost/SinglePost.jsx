@@ -1,11 +1,13 @@
 import classes from './singlePost.module.scss';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { Context } from 'react-blog/context/Context';
 import axios from 'axios';
 
 export default function SinglePost() {
   const [post, setPost] = useState({});
+  const { user } = useContext(Context);
   const location = useLocation();
   const path = location.pathname.split('/')[2];
   const PF = 'http://localhost:4000/images/';
@@ -31,10 +33,12 @@ export default function SinglePost() {
         )}
         <h1 className={classes.singlePostTitle}>
           {post.title}
-          <div className={classes.singlePostEdit}>
-            <FaEdit className={classes.singlePostIcon} />
-            <FaTrashAlt className={classes.singlePostIcon} />
-          </div>
+          {post.username === user.username && (
+            <div className={classes.singlePostEdit}>
+              <FaEdit className={classes.singlePostIcon} />
+              <FaTrashAlt className={classes.singlePostIcon} />
+            </div>
+          )}
         </h1>
         <div className={classes.singlePostInfo}>
           <span className={classes.singlePostAuthor}>
