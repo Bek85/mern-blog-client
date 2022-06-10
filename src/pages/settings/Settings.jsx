@@ -11,6 +11,7 @@ export default function Settings() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [success, setSuccess] = useState(false);
   const PF = 'http://localhost:4000/images/';
 
   const handleSubmit = async (evt) => {
@@ -35,6 +36,7 @@ export default function Settings() {
     }
     try {
       await axios.put(`api/users/${user._id}`, updatedUser);
+      setSuccess(true);
     } catch (error) {
       console.log(error);
     }
@@ -85,6 +87,13 @@ export default function Settings() {
           <button type="submit" className={classes.settingsSubmit}>
             Update
           </button>
+          {success && (
+            <span
+              style={{ color: 'green', textAlign: 'center', marginTop: 15 }}
+            >
+              Profile has been updated...
+            </span>
+          )}
         </form>
       </div>
       <Sidebar />
