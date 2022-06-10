@@ -6,7 +6,7 @@ import { Context } from 'react-blog/context/Context';
 import axios from 'axios';
 
 export default function Settings() {
-  const { user } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
   const [file, setFile] = useState(null);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -16,6 +16,7 @@ export default function Settings() {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
+    dispatch({ type: 'UPDATE_START' });
     const updatedUser = {
       userId: user._id,
       username,
@@ -35,10 +36,11 @@ export default function Settings() {
       }
     }
     try {
-      await axios.put(`api/users/${user._id}`, updatedUser);
+      const response = await axios.put(`api/users/${user._id}`, updatedUser);
       setSuccess(true);
+      dispatch({ type: 'UPDATE_SUCCESS', payload: response.data });
     } catch (error) {
-      console.log(error);
+      dispatch({ type: 'UPDATE_FAILURE' });
     }
   };
   return (
